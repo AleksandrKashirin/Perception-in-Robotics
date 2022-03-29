@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot name="secondary_robot">
+  <material name="blue">
+    <color rgba="0 0 1 0.8"/>
+  </material>
+
+  <material name="transp">
+    <color rgba="0 1 0 0.1"/>
+  </material>
+
+  <link name="secondary_robot">
+
+    <visual>
+      <origin xyz="-0.181064 -0.161895 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eurobot_localization/models/FATBOY_low_quality.STL" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eurobot_localization/models/FATBOY_low_quality.STL" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+
+  </link>
+
+</robot>

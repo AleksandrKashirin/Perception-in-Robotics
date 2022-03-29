@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+        <param name="use_sim_time" value="true"/>
+        <rosparam file="$(find eurobot_localization)/config/secondary_robot_localization_params.yaml" command="load" ns="secndary_robot"/>
+	<rosparam file="$(find eurobot_stm)/config/stm.yaml" command="load" ns="secndary_robot"/>
+	<rosparam file="$(find eurobot_main)/config/secondary_robot.yaml" command="load" ns="secndary_robot"/>
+	<rosparam file="$(find eurobot_main)/config/bt_params.yaml" command="load" ns="secndary_robot"/>
+	<rosparam file="$(find eurobot_main)/config/robot_tf_names.yaml" command="load" ns="secndary_robot"/>
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find eurobot_localization)/rviz/rob.rviz" />
+    <group ns = "secndary_robot">
+            <node pkg="eurobot_localization" name="EKF_node" type="EKF_ros_node.py" respawn="true" output="log"/>
+           <!-- <node pkg="eurobot_localization" name="odom_frame_publisher" type="map_to_odom_broadcaster.py" respawn="true" output="log"/>-->
+    </group>
+</launch>

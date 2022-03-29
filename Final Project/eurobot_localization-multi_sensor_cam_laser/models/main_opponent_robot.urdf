@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot name="main_opponent_robot">
+  <material name="blue">
+    <color rgba="0 1 0 0.8"/>
+  </material>
+
+  <link name="main_opponent_robot">
+
+    <visual>
+      <origin xyz="0 0 0.05" rpy="1.57 0 3.14" />
+      <geometry>
+        <mesh
+          filename="package://eurobot_localization/models/Racer.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.57 0 1.05" />
+      <geometry>
+        <mesh
+          filename="package://eurobot_localization/models/Racer.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+
+  </link>
+
+</robot>
